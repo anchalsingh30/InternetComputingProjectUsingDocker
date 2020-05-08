@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.6.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.pace.university</groupId>
+	<artifactId>internet</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>internet</name>
+	<description>assignment 5</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<build.time>${maven.build.timestamp}</build.time>
+		<maven.build.timestamp.format>yyyyMMdd</maven.build.timestamp.format>
+		<openjdk.base.image>alpine:latest</openjdk.base.image>
+		<java.lib.dir>/opt/java/openjdk</java.lib.dir>
+		<docker.image.name>${project.artifactId}:${project.version}-${build.time}</docker.image.name>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+					<groupId>io.fabric8</groupId>
+					<artifactId>docker-maven-plugin</artifactId>
+					<version>0.31.0</version>
+					<configuration>
+						<resources>
+							<env>
+								<JAVA_LIB_DIR>${java.lib.dir}</JAVA_LIB_DIR>
+							</env>
+						</resources>
+						<images>
+							<image>
+								<name>${docker.image.name}</name>
+								<build>
+									<from>${openjdk.base.image}</from>
+									<assembly>
+										<descriptorRef>artifact</descriptorRef>
+										<targetDir>/</targetDir>
+										<basedir>/target/${project.artifactId}-${project.version}.jar</basedir>
+									</assembly>
+									<entryPoint>${java.lib.dir}/jre/bin/java -jar /${project.artifactId}-${project.version}.jar</entryPoint>
+									<tags>
+										<tag>${project.version}-latest</tag>
+									</tags>
+								</build>
+							</image>
+						</images>
+					</configuration>
+					<executions>
+						<execution>
+							<id>clean</id>
+							<phase>clean</phase>
+							<goals>
+								<goal>remove</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>build</id>
+							<phase>package</phase>
+							<goals>
+								<goal>build</goal>
+							</goals>
+						</execution>
+						</executions>
+				</plugin>
+				
+		</plugins>
+	</build>
+
+</project>

@@ -1,0 +1,32 @@
+{
+	"customers": [
+		{
+			"id": "1",
+			"name": "Alan",
+			"order": [
+				{
+					"id": 10,
+					"name": "Shoes"
+				},
+				{
+					"id": 11,
+					"name": "Shampoo"
+				}
+			]
+		},
+		{
+			"id": "2",
+			"name": "Elina",
+			"order": [
+				{
+					"id": 20,
+					"name": "Shoes"
+				},
+				{
+					"id": 21,
+					"name": "Shampoo"
+				}
+			]
+		}
+	]
+}
