@@ -6,11 +6,27 @@
 			"order": [
 				{
 					"id": 10,
-					"name": "Shoes"
+					"car": [{
+						"name": "BMW",
+						"color": "Grey",
+						"model": "2020 5 series"
+					}],
+					"phone": [{
+						"model": "iPhone 6s",
+						"year launched": "2016"
+					}]
 				},
 				{
 					"id": 11,
-					"name": "Shampoo"
+					"Food": [{
+						"name": "Mexican fires"
+						
+					}],
+					"Shakes": [{
+						"name": "Mango shake"
+						
+					}]
+					
 				}
 			]
 		},
@@ -20,11 +36,27 @@
 			"order": [
 				{
 					"id": 20,
-					"name": "Shoes"
+					"clothes": [{
+						"brand": "Tommy Hilfiger",
+						"color": "Navy Blue",
+						"type": "One piece"
+					}],
+					"make-up": [{
+						"brand": "Morphy",
+						"type": "Eye Palette"
+					}]
 				},
 				{
 					"id": 21,
-					"name": "Shampoo"
+					"jewellery": [{
+						"name": "Bracelet",
+						"color": "Gold"
+						
+					}],
+					"heels": [{
+						"name": "stilettos",
+						"color": "red"
+					}]
 				}
 			]
 		}
