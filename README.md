@@ -10,10 +10,12 @@ Description:
 4. docker
 
 ### How to install and run through eclipse
-		1. import project as existing maven project
-		2. Right click on **InternetApplication.class** and run as Java Application. 
-		3. If the application fails to start since the port is already in use, then either kill the process running on 8080 or change the port number through application.properties file in main/java/resources folder.
-			
+1. import project as existing maven project
+2. Right click on **InternetApplication.class** and run as Java Application. 
+3. If the application fails to start since the port is already in use, then either kill the process running on 8080 or change the port number through application.properties file in main/java/resources folder.
+
+### How to run through docker cli
+
 1. Open terminal and cd into this project
 2. run ```mvn clean install``` 
 3. then run ```docker-compose up -d```
