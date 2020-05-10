@@ -1,4 +1,5 @@
 
+
 # InternetComputingProjectUsingDocker
 
 ### Description:
@@ -30,15 +31,28 @@ This project is designed using Java and RESTful Web services.
 7. Run **```docker rmi -f <Image-Id>```** to delete any existing image.
 <hr>
 
-### Example:
+### RESTFul Endpoints:
 
-1. **localhost:8080/customers** : `[{"id":"1","name":"Alan","order":[{"id":10,"car":[{"name":"BMW","color":"Grey","model":"2020 5 series"}],"phone":[{"model":"iPhone 6s","year launched":"2016"}]},{"id":11,"Food":[{"name":"Mexican fires"}],"Shakes":[{"name":"Mango shake"}]}]},{"id":"2","name":"Elina","order":[{"id":20,"clothes":[{"brand":"Tommy Hilfiger","color":"Navy Blue","type":"One piece"}],"make-up":[{"brand":"Morphy","type":"Eye Palette"}]},{"id":21,"jewellery":[{"name":"Bracelet","color":"Gold"}],"heels":[{"name":"stilettos","color":"red"}]}]}]` 
+Swagger UI Link: http://localhost:8080/swagger-ui.html 
 
-2. **localhost:8080/customers/1** : `{"id":"1","name":"Alan","order":[{"id":10,"car":[{"name":"BMW","color":"Grey","model":"2020 5 series"}],"phone":[{"model":"iPhone 6s","year launched":"2016"}]},{"id":11,"Food":[{"name":"Mexican fires"}],"Shakes":[{"name":"Mango shake"}]}]}`
+How to navigate on this link:
+1. Please open the link provided above then you can see the swagger-ui with 4 REST endpoints.
+2. Now, click on any one of the endpoints provided under **Controller** section.
+3. You will be able to see **try it out** option on the right side. (Please refer to the image).
+4. If the endpoint requires any path or query parameter then please provide them and then click on **exceute**.
 
-3. **localhost:8080/customers/1/orders** : `[{"id":10,"car":[{"name":"BMW","color":"Grey","model":"2020 5 series"}],"phone":[{"model":"iPhone 6s","year launched":"2016"}]},{"id":11,"Food":[{"name":"Mexican fires"}],"Shakes":[{"name":"Mango shake"}]}]`
 
-4. **localhost:8080/customers/1/orders/10** : `{"id":10,"car":[{"name":"BMW","color":"Grey","model":"2020 5 series"}],"phone":[{"model":"iPhone 6s","year launched":"2016"}]}`
+![Swagger Controller](https://github.com/anchalsingh30/InternetComputingProjectUsingDocker/blob/master/swagger-ui%20endpoints.png)
+
+![try it out](https://github.com/anchalsingh30/InternetComputingProjectUsingDocker/blob/master/try%20it%20out.png)
+
+6. **localhost:8080/customers** : `[{"id":"1","name":"Alan","order":[{"id":10,"car":[{"name":"BMW","color":"Grey","model":"2020 5 series"}],"phone":[{"model":"iPhone 6s","year launched":"2016"}]},{"id":11,"Food":[{"name":"Mexican fires"}],"Shakes":[{"name":"Mango shake"}]}]},{"id":"2","name":"Elina","order":[{"id":20,"clothes":[{"brand":"Tommy Hilfiger","color":"Navy Blue","type":"One piece"}],"make-up":[{"brand":"Morphy","type":"Eye Palette"}]},{"id":21,"jewellery":[{"name":"Bracelet","color":"Gold"}],"heels":[{"name":"stilettos","color":"red"}]}]}]` 
+
+7. **localhost:8080/customers/1** : `{"id":"1","name":"Alan","order":[{"id":10,"car":[{"name":"BMW","color":"Grey","model":"2020 5 series"}],"phone":[{"model":"iPhone 6s","year launched":"2016"}]},{"id":11,"Food":[{"name":"Mexican fires"}],"Shakes":[{"name":"Mango shake"}]}]}`
+
+8. **localhost:8080/customers/1/orders** : `[{"id":10,"car":[{"name":"BMW","color":"Grey","model":"2020 5 series"}],"phone":[{"model":"iPhone 6s","year launched":"2016"}]},{"id":11,"Food":[{"name":"Mexican fires"}],"Shakes":[{"name":"Mango shake"}]}]`
+
+9. **localhost:8080/customers/1/orders/10** : `{"id":10,"car":[{"name":"BMW","color":"Grey","model":"2020 5 series"}],"phone":[{"model":"iPhone 6s","year launched":"2016"}]}`
 
 <hr>
 
