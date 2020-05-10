@@ -46,13 +46,6 @@ How to navigate on this link:
 
 ![try it out](https://github.com/anchalsingh30/InternetComputingProjectUsingDocker/blob/master/try%20it%20out.png)
 
-6. **localhost:8080/customers** : `[{"id":"1","name":"Alan","order":[{"id":10,"car":[{"name":"BMW","color":"Grey","model":"2020 5 series"}],"phone":[{"model":"iPhone 6s","year launched":"2016"}]},{"id":11,"Food":[{"name":"Mexican fires"}],"Shakes":[{"name":"Mango shake"}]}]},{"id":"2","name":"Elina","order":[{"id":20,"clothes":[{"brand":"Tommy Hilfiger","color":"Navy Blue","type":"One piece"}],"make-up":[{"brand":"Morphy","type":"Eye Palette"}]},{"id":21,"jewellery":[{"name":"Bracelet","color":"Gold"}],"heels":[{"name":"stilettos","color":"red"}]}]}]` 
-
-7. **localhost:8080/customers/1** : `{"id":"1","name":"Alan","order":[{"id":10,"car":[{"name":"BMW","color":"Grey","model":"2020 5 series"}],"phone":[{"model":"iPhone 6s","year launched":"2016"}]},{"id":11,"Food":[{"name":"Mexican fires"}],"Shakes":[{"name":"Mango shake"}]}]}`
-
-8. **localhost:8080/customers/1/orders** : `[{"id":10,"car":[{"name":"BMW","color":"Grey","model":"2020 5 series"}],"phone":[{"model":"iPhone 6s","year launched":"2016"}]},{"id":11,"Food":[{"name":"Mexican fires"}],"Shakes":[{"name":"Mango shake"}]}]`
-
-9. **localhost:8080/customers/1/orders/10** : `{"id":10,"car":[{"name":"BMW","color":"Grey","model":"2020 5 series"}],"phone":[{"model":"iPhone 6s","year launched":"2016"}]}`
 
 <hr>
 
