@@ -67,53 +67,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>io.fabric8</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.31.0</version>
-				<configuration>
-					<resources>
-						<env>
-							<JAVA_LIB_DIR>${java.lib.dir}</JAVA_LIB_DIR>
-						</env>
-					</resources>
-					<images>
-						<image>
-							<name>${docker.image.name}</name>
-							<build>
-								<from>${openjdk.base.image}</from>
-								<assembly>
-									<descriptorRef>artifact</descriptorRef>
-									<targetDir>/</targetDir>
-									<basedir>/target/${project.artifactId}-${project.version}.jar</basedir>
-								</assembly>
-								<entryPoint>${java.lib.dir}/jre/bin/java -jar
-									/${project.artifactId}-${project.version}.jar</entryPoint>
-								<tags>
-									<tag>${project.version}-latest</tag>
-								</tags>
-							</build>
-						</image>
-					</images>
-				</configuration>
-				<executions>
-					<execution>
-						<id>clean</id>
-						<phase>clean</phase>
-						<goals>
-							<goal>remove</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>build</id>
-						<phase>package</phase>
-						<goals>
-							<goal>build</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
 		</plugins>
 	</build>
 
